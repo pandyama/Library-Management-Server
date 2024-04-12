@@ -16,19 +16,9 @@ const passport = require("passport");
 const session = require("express-session");
 const flash = require("express-flash");
 const bcrypt = require("bcrypt");
-const knex = require("knex");
 const LocalStrategy = require("passport-local").Strategy;
 
-const pg = knex({
-  client: "pg",
-  connection: "postgres://postgres:pgadmin@localhost:5432/postgres",
-});
-
-pg("users")
-  .where({ email: "test@gmail.com" })
-  .then((rows) => {
-    console.log("🚀 ~ rows:", rows);
-  });
+const { find } = require("./database/user");
 
 app.use(express.urlencoded({ extended: false }));
 app.use(flash());
@@ -47,6 +37,8 @@ app.use(passport.initialize()); // init passport on every route call
 app.use(passport.session()); //allow passport to use "express-session"
 
 authUser = async (user, password, done) => {
+  const findUser = await find({ email: "test@gmail.com" });
+
   const testUser = {
     username: "sally",
     password: "sally123",
