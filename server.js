@@ -2,6 +2,9 @@
  * - install yarn using `npm install -g yarn` global
  * - run `yarn init` to initialize a yarn project with package.json
  * - https://www.linode.com/docs/guides/install-and-use-the-yarn-package-manager/
+ *
+ * - PASSPORT
+ *    - https://medium.com/@prashantramnyc/node-js-with-passport-authentication-simplified-76ca65ee91e5
  */
 const bodyParser = require("body-parser");
 var express = require("express");
