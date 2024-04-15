@@ -73,34 +73,6 @@ passport.deserializeUser((id, done) => {
   done(null, { name: "Kyle", id: 123 });
 });
 
-//Middleware to see how the params are populated by Passport
-let count = 1;
-
-// printData = (req, res, next) => {
-//   console.log("\n==============================");
-//   console.log(`------------>  ${count++}`);
-
-//   console.log(`req.body.username -------> ${req.body.username}`);
-//   console.log(`req.body.password -------> ${req.body.password}`);
-
-//   console.log(`\n req.session.passport -------> `);
-//   console.log(req.session.passport);
-
-//   console.log(`\n req.user -------> `);
-//   console.log(req.user);
-
-//   console.log("\n Session and Cookie");
-//   console.log(`req.session.id -------> ${req.session.id}`);
-//   console.log(`req.session.cookie -------> `);
-//   console.log(req.session.cookie);
-
-//   console.log("===========================================\n");
-
-//   next();
-// };
-
-// app.use(printData);
-
 app.post(
   "/login",
   passport.authenticate("local", {
