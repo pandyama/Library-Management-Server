@@ -11,7 +11,7 @@ const find = async function (data) {
 };
 
 const get = async function (id) {
-  const users = await pg("users").where(id);
+  const users = await pg("users").where({ id });
   console.log("🚀 ~ get ~ users:", users);
 };
 
