@@ -1,7 +1,7 @@
 var express = require("express");
 var mainController = require("../controller/UserController");
 var router = express.Router();
-const { find } = require("../database/user");
+const { find } = require("../tables/user");
 const passport = require("passport");
 const LocalStrategy = require("passport-local").Strategy;
 
